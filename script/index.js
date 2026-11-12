@@ -36,7 +36,10 @@ products.forEach((product) => {
                                 <option value="10">10</option>
                             </select>
                         </label>
-
+                        <p class="added-message js-added-message-${product.id}" role="status" hidden>
+                          <span class="added-check" aria-hidden="true">✓</span>
+                          Added
+                        </p>
                         <button class="add-to-bag js-add-to-cart" type="button" data-product-id="${product.id}"
                         >
                             Add to Bag
@@ -51,12 +54,15 @@ const js_add_to_cart = document.querySelectorAll(".js-add-to-cart");
 
 const bag_count = document.querySelector(".bag-count");
 
-
 js_add_to_cart.forEach((button) => {
+  let time_out_id;
   button.addEventListener("click", () => {
     const product_id = button.dataset.productId;
     const js_quantity_selector = document.querySelector(
       `.js-quantity-selector-${product_id}`,
+    );
+    const js_added_message = document.querySelector(
+      `.js-added-message-${product_id}`,
     );
     let matching_item;
     bag_cart.forEach((item) => {
@@ -79,5 +85,11 @@ js_add_to_cart.forEach((button) => {
     });
 
     bag_count.textContent = cart_quantity;
+
+    clearTimeout(time_out_id);
+    js_added_message.hidden = false;
+    time_out_id = setTimeout(()=>{
+      js_added_message.hidden = true;
+    },2000)
   });
 });
