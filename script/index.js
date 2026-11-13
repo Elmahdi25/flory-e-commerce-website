@@ -1,5 +1,5 @@
-import { bag_cart, add_to_bag_cart } from "./bag_cart.js";
-import { products } from "./product.js";
+import { bag_cart, add_to_bag_cart } from "../data/bag_cart.js";
+import { products } from "../data/product.js";
 const js_products_grid = document.querySelector(".js-products-grid");
 
 js_products_grid.innerHTML = "";

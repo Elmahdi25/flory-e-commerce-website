@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/icons/flory-fav-icon.png">
+    <link rel="stylesheet" href="../style/generale.css">
+
+    <link rel="stylesheet" href="../style/pages/checkout.css">
+    <link rel="stylesheet" href="../style/components/footer.css">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <header class="checkout-header">
+        <div class="checkout-header-inner">
+            <a class="checkout-logo" href="../index.html">
+                <img src="../images/flory-logo-background-removed.png" alt="FLORY home">
+            </a>
+
+            <h1 class="checkout-title">
+                Checkout
+                <span class="checkout-item-count js-checkout-item-count">(0 items)</span>
+            </h1>
+
+            <span class="checkout-lock" aria-hidden="true">&#128274;&#65038;</span>
+        </div>
+    </header>
+
+
+    <main class="checkout-main">
+        <h2 class="checkout-section-title" id="review-heading">
+            Review your order
+        </h2>
+    
+        <div class="checkout-layout">
+            <section class="checkout-items js-checkout-items" aria-labelledby="review-heading">
+                <article class="checkout-item" data-product-id="rose-chiffon-hijab">
+                    <p class="checkout-delivery-date">
+                        Delivery date: <time datetime="2026-11-24">Tuesday, November 24</time>
+                    </p>
+    
+                    <div class="checkout-item-content">
+                        <img class="checkout-product-image" src="../images/produfcts/black-jersey-hijab.jpg"
+                            alt="Rose pink chiffon hijab">
+    
+                        <div class="checkout-product-details">
+                            <h3 class="checkout-product-name">Rose Chiffon Hijab</h3>
+                            <p class="checkout-product-price">€14.90</p>
+    
+                            <div class="checkout-product-actions">
+                                <span>Quantity: <span class="js-item-quantity">2</span></span>
+                                <button type="button" class="js-update-quantity">Update</button>
+                                <button type="button" class="js-remove-item">Remove</button>
+                            </div>
+                        </div>
+    
+                        <fieldset class="checkout-delivery-options">
+                            <legend>Choose a delivery option</legend>
+    
+                            <label class="checkout-delivery-option">
+                                <input type="radio" name="delivery-rose-chiffon-hijab" value="standard" checked>
+                                <span>Tuesday, November 24</span>
+                                <span>Free shipping</span>
+                            </label>
+    
+                            <label class="checkout-delivery-option">
+                                <input type="radio" name="delivery-rose-chiffon-hijab" value="priority">
+                                <span>Wednesday, November 18</span>
+                                <span>€4.99 shipping</span>
+                            </label>
+    
+                            <label class="checkout-delivery-option">
+                                <input type="radio" name="delivery-rose-chiffon-hijab" value="express">
+                                <span>Monday, November 16</span>
+                                <span>€9.99 shipping</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                </article>
+    
+                <article class="checkout-item" data-product-id="sand-jersey-hijab">
+                    <p class="checkout-delivery-date">
+                        Delivery date: <time datetime="2026-11-24">Tuesday, November 24</time>
+                    </p>
+    
+                    <div class="checkout-item-content">
+                        <img class="checkout-product-image" src="../images/products/brown-full-coverage-undercap.jpg"
+                            alt="Sand beige jersey hijab">
+    
+                        <div class="checkout-product-details">
+                            <h3 class="checkout-product-name">Sand Jersey Hijab</h3>
+                            <p class="checkout-product-price">€17.90</p>
+    
+                            <div class="checkout-product-actions">
+                                <span>Quantity: <span class="js-item-quantity">1</span></span>
+                                <button type="button" class="js-update-quantity">Update</button>
+                                <button type="button" class="js-remove-item">Remove</button>
+                            </div>
+                        </div>
+    
+                        <fieldset class="checkout-delivery-options">
+                            <legend>Choose a delivery option</legend>
+    
+                            <label class="checkout-delivery-option">
+                                <input type="radio" name="delivery-sand-jersey-hijab" value="standard" checked>
+                                <span>Tuesday, November 24</span>
+                                <span>Free shipping</span>
+                            </label>
+    
+                            <label class="checkout-delivery-option">
+                                <input type="radio" name="delivery-sand-jersey-hijab" value="priority">
+                                <span>Wednesday, November 18</span>
+                                <span>€4.99 shipping</span>
+                            </label>
+    
+                            <label class="checkout-delivery-option">
+                                <input type="radio" name="delivery-sand-jersey-hijab" value="express">
+                                <span>Monday, November 16</span>
+                                <span>€9.99 shipping</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                </article>
+            </section>
+    
+            <aside class="order-summary" aria-labelledby="order-summary-heading">
+                <h2 class="order-summary-title" id="order-summary-heading">Order summary</h2>
+    
+                <dl class="order-summary-details">
+                    <div class="order-summary-row">
+                        <dt>Items (<span class="js-summary-item-count">3</span>)</dt>
+                        <dd class="js-summary-subtotal">€47.70</dd>
+                    </div>
+    
+                    <div class="order-summary-row">
+                        <dt>Shipping</dt>
+                        <dd class="js-summary-shipping">€0.00</dd>
+                    </div>
+    
+                    <div class="order-summary-row order-summary-total">
+                        <dt>Order total</dt>
+                        <dd class="js-summary-total">€47.70</dd>
+                    </div>
+                </dl>
+    
+                <button type="button" class="place-order-button js-place-order">
+                    Place your order
+                </button>
+            </aside>
+        </div>
+    </main>
+    <footer class="flory-footer">
+        <div class="flory-footer-inner">
+            <a class="flory-footer-brand" href="index.html" aria-label="FLORY home">
+                <img src="../images/flory-logo-background-removed.png" alt="FLORY">
+            </a>
+
+            <nav class="flory-footer-nav" aria-label="Footer navigation">
+                <ul class="flory-footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#shop">Shop</a></li>
+                    <li><a href="index.html#collection">Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="orders.html">Orders &amp; Returns</a></li>
+                </ul>
+            </nav>
+
+            <p class="flory-footer-credit">
+                Developed by
+                <a href="https://github.com/Elmahdi25">https://github.com/Elmahdi25</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <script type="module" src="../script/checkout.js"></script>
+</body>
+
+</html>
