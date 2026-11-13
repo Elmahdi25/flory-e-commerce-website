@@ -1,3 +1,5 @@
+import { bag_cart } from "./bag_cart.js";
+
 const js_products_grid = document.querySelector(".js-products-grid");
 
 js_products_grid.innerHTML = "";
