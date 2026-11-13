@@ -1,4 +1,4 @@
-import { bag_cart } from "./bag_cart.js";
+import { bag_cart, add_to_bag_cart } from "./bag_cart.js";
 import { products } from "./product.js";
 const js_products_grid = document.querySelector(".js-products-grid");
 
@@ -56,6 +56,22 @@ const js_add_to_cart = document.querySelectorAll(".js-add-to-cart");
 
 const bag_count = document.querySelector(".bag-count");
 
+
+
+function update_bag_cart(time_out_id, js_added_message) {
+  let cart_quantity = 0;
+  bag_cart.forEach((item) => {
+    cart_quantity += item.quantity;
+  });
+
+  bag_count.textContent = cart_quantity;
+
+  clearTimeout(time_out_id);
+  js_added_message.hidden = false;
+  time_out_id = setTimeout(() => {
+    js_added_message.hidden = true;
+  }, 2000);
+}
 js_add_to_cart.forEach((button) => {
   let time_out_id;
   button.addEventListener("click", () => {
@@ -66,32 +82,9 @@ js_add_to_cart.forEach((button) => {
     const js_added_message = document.querySelector(
       `.js-added-message-${product_id}`,
     );
-    let matching_item;
-    bag_cart.forEach((item) => {
-      if (product_id === item.product_id) {
-        matching_item = item;
-      }
-    });
-    if (matching_item) {
-      matching_item.quantity += Number(js_quantity_selector.value);
-    } else {
-      bag_cart.push({
-        product_id: product_id,
-        quantity: Number(js_quantity_selector.value),
-      });
-    }
 
-    let cart_quantity = 0;
-    bag_cart.forEach((item) => {
-      cart_quantity += item.quantity;
-    });
+    add_to_bag_cart(product_id, js_quantity_selector);
 
-    bag_count.textContent = cart_quantity;
-
-    clearTimeout(time_out_id);
-    js_added_message.hidden = false;
-    time_out_id = setTimeout(()=>{
-      js_added_message.hidden = true;
-    },2000)
+    update_bag_cart(time_out_id, js_added_message);
   });
 });
