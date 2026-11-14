@@ -1,4 +1,8 @@
-import { bag_cart, remove_from_card } from "../data/bag_cart.js";
+import {
+  bag_cart,
+  remove_from_card,
+  calculate_bag_cart_quantity,
+} from "../data/bag_cart.js";
 import { products } from "../data/product.js";
 import { format_current } from "./utils/money.js";
 const js_checkout_items = document.querySelector(".js-checkout-items");
@@ -77,10 +81,7 @@ function update_bag_cart() {
   const js_checkout_item_count = document.querySelector(
     ".js-checkout-item-count",
   );
-  let cart_quantity = 0;
-  bag_cart.forEach((item) => {
-    cart_quantity += item.quantity;
-  });
+  const cart_quantity = calculate_bag_cart_quantity();
   js_checkout_item_count.innerHTML = `(${cart_quantity} item)`;
 }
 update_bag_cart();

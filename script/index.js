@@ -1,4 +1,8 @@
-import { bag_cart, add_to_bag_cart } from "../data/bag_cart.js";
+import {
+  bag_cart,
+  add_to_bag_cart,
+  calculate_bag_cart_quantity,
+} from "../data/bag_cart.js";
 import { products } from "../data/product.js";
 const js_products_grid = document.querySelector(".js-products-grid");
 
@@ -57,10 +61,7 @@ const js_add_to_cart = document.querySelectorAll(".js-add-to-cart");
 const bag_count = document.querySelector(".bag-count");
 
 function update_bag_cart() {
-  let cart_quantity = 0;
-  bag_cart.forEach((item) => {
-    cart_quantity += item.quantity;
-  });
+  const cart_quantity = calculate_bag_cart_quantity();
 
   bag_count.textContent = cart_quantity;
 }
