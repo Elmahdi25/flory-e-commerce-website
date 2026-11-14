@@ -13,7 +13,7 @@ if (!bag_cart) {
   ];
 }
 
-function save_to_storage() {
+export function save_to_storage() {
   localStorage.setItem("bag_cart", JSON.stringify(bag_cart));
 }
 export function add_to_bag_cart(product_id, js_quantity_selector) {
