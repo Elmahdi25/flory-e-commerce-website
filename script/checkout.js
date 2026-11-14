@@ -72,3 +72,12 @@ js_remove_item.forEach((button) => {
     checkout_item_container.remove()
   });
 });
+
+const js_checkout_item_count = document.querySelector(
+  ".js-checkout-item-count"
+);
+let cart_quantity = 0;
+bag_cart.forEach((item)=>{
+    cart_quantity += item.quantity;
+    js_checkout_item_count.innerHTML = `(${cart_quantity} item)`;
+})
