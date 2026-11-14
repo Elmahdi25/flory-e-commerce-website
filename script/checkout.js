@@ -68,16 +68,19 @@ js_remove_item.forEach((button) => {
     const checkout_item_container = document.querySelector(
       `.checkout-item-container-${product_id}`,
     );
-    remove_from_card(product_id)
-    checkout_item_container.remove()
+    remove_from_card(product_id);
+    checkout_item_container.remove();
+    update_bag_cart();
   });
 });
-
-const js_checkout_item_count = document.querySelector(
-  ".js-checkout-item-count"
-);
-let cart_quantity = 0;
-bag_cart.forEach((item)=>{
+function update_bag_cart() {
+  const js_checkout_item_count = document.querySelector(
+    ".js-checkout-item-count",
+  );
+  let cart_quantity = 0;
+  bag_cart.forEach((item) => {
     cart_quantity += item.quantity;
-    js_checkout_item_count.innerHTML = `(${cart_quantity} item)`;
-})
+  });
+  js_checkout_item_count.innerHTML = `(${cart_quantity} item)`;
+}
+update_bag_cart();
